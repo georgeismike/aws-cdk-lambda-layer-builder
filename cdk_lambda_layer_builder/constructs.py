@@ -209,9 +209,11 @@ class BuildPyLayerAsset(Construct):
             image_name = 'python:3.8.13'
         elif self.py_runtime.to_string()=='python3.9':
             image_name = 'python:3.9.13'
+        elif self.py_runtime.to_string()=='python3.10':
+            image_name = 'python:3.10.11'
         else:
             raise ValueError(
-                (f'py_runtime must be aws_lambda.Runtime.[PYTHON_3_7 | PYTHON_3_8 | PYTHON_3_9]. '
+                (f'py_runtime must be aws_lambda.Runtime.[PYTHON_3_7 | PYTHON_3_8 | PYTHON_3_9 | python_3_10 ]. '
                  f'{self.py_runtime.to_string()} passed')
             )
         return image_name
